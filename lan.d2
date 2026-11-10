@@ -1,0 +1,34 @@
+vars: {
+  d2-config: {
+    layout-engine: tala
+  }
+}
+
+ONT -> Lounge Switch: vlan 500
+
+Lounge Switch -> Doorbell: vlan 60
+Lounge Switch -> Garage Camera: vlan 60
+
+Lounge Switch -> Office AP: vlan 1, Tagged: 10,20,50
+Lounge Switch -> Lounge AP: vlan 1, Tagged: 10,20,50
+Lounge Switch -> Bedroom AP: vlan 1, Tagged: 10,20,50
+
+Lounge Switch -> Apple TV: vlan 10
+
+Lounge Switch <-> Office Switch: vlan 1, Tagged: 10,20,50,500
+
+Office Switch -> Router.WAN: vlan 500
+Office Switch -> Router.LAN: vlan 1, Tagged: 10,20,50
+
+Office Switch -> PS5: vlan 10
+Office Switch -> Gaming Laptop: vlan 10
+
+Office Switch -> Prod Kubernetes Node 01: vlan 30
+Office Switch -> Prod Kubernetes Node 02: vlan 30
+Office Switch -> Prod Kubernetes Node 03: vlan 30
+Office Switch -> Prod Kubernetes Node 04: vlan 30
+
+Office Switch -> Dev Kubernetes Node 01: vlan 30
+Office Switch -> Dev Kubernetes Node 02: vlan 30
+Office Switch -> Dev Kubernetes Node 03: vlan 30
+Office Switch -> Dev Kubernetes Node 04: vlan 30
